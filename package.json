@@ -4,18 +4,21 @@
     "build": "tsc -p ./src",
     "test:tslint": "tslint './src/**/*.{ts,tsx}'",
     "test:prettier": "prettier -c './src/**/*.{ts,tsx}'",
-    "test": "run-p test:*"
+    "test": "run-p test:*",
+    "generate:thrift": "thrift -r --gen js:node,ts,es6 -out src/thrift talk.thrift"
   },
   "name": "line2slack-next",
   "version": "1.0.0",
   "main": "dist/app.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/thrift": "^0.10.9",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
     "tslint": "^5.15.0"
   },
   "dependencies": {
+    "thrift": "^0.13.0",
     "typescript": "^3.7.3"
   }
 }
